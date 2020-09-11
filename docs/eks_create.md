@@ -37,7 +37,7 @@ eksctl create cluster \
 ### 6) Check if cluster was created: 
 
 ```bash
-$ aws eks list-clusters --region=us-west-2 --output=json --p udacity
+$ aws eks list-clusters --region=us-west-2 --output=json --p AWS_PROFILE
 ```
 
 ### 7) Create the deployment
@@ -50,6 +50,12 @@ $ kubectl apply -f templates/deployment.yml
 
 ```bash
 $ kubectl apply -f templates/loadbalancer.yml
+```
+
+### 9) List all services
+
+```bash
+$ kubectl get svc --all-namespaces
 ```
 
 ## References

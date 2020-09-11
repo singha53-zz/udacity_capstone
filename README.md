@@ -28,9 +28,10 @@ $ docker build -t omics-bioanalytics .
 $ docker run -p 80:80 -t omics-bioanalytics
 ```
 
-> navigate to http://locahost:80 to see running application
+> navigate to http://localhost:80 to see running application
 
 ### Run on Amazon EKS
 
-1) [Build, tag and push image to DockerHub](https://github.com/singha53/udacity_capstone/blob/master/docs/docker_image_walkthrough.gif)
-2) [Create EKS cluster and deploy application](https://github.com/singha53/udacity_capstone/blob/master/docs/eks_walkthrough.gif)
+1) [Build, tag and push image to DockerHub](https://github.com/singha53/udacity_capstone/blob/master/docs/dockerhub.md)
+2) [Create EKS cluster and deploy application](https://github.com/singha53/udacity_capstone/blob/master/docs/eks_create.md)
+3) [Delete EKS cluster](https://github.com/singha53/udacity_capstone/blob/master/docs/eks_delete.md)
