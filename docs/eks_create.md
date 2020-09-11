@@ -10,7 +10,7 @@
 ```bash
 $ chmod 400 eks.pem
 ```
--	Retrieve public key using and save it: 
+-	Retrieve public key using and save it (add the files to .gitignore): 
 ```bash
 $ ssh-keygen -y -f eks.pem > eks.pub
 ```
