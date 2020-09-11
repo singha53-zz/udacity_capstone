@@ -19,6 +19,8 @@ $ ssh-keygen -y -f eks.pem > eks.pub
 
 * AWS_PROFILE (*e.g.* udacity)
 
+![GIF](https://github.com/singha53/udacity_capstone/blob/master/docs/eks_create.gif)
+
 ```bash
 eksctl create cluster \
 --name omics-bioanalytics \
