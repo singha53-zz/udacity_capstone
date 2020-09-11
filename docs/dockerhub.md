@@ -1,5 +1,7 @@
 # Create public docker image of omicsBioAnalytics
 
+![GIF](https://github.com/singha53/udacity_capstone/blob/master/docs/docker_push.gif)
+
 ### 1) [Install docker](https://docs.docker.com/get-docker/)
 ### 2) [Make docker account](https://hub.docker.com/signup)
 
@@ -26,6 +28,13 @@ $ docker image ls
 $ docker tag <_IMAGE_ID_> <REPO>/<_IMAGE_NAME_>:versionX.X
 $ docker push <_REPO_>/<_IMAGE_NAME_>:versionX.X
 ```
+
+### 6) [Delete images](https://stackoverflow.com/questions/44785585/how-to-delete-all-local-docker-images)
+
+```bash
+$ docker rmi <_IMAGE_ID_>
+```
+
 
 ## References
 1) [Docker build](hhttps://docs.docker.com/engine/reference/commandline/build/)

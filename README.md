@@ -11,7 +11,7 @@
 * [References](#ref)
 * [Copyright and license](#copyright-and-license)
 
-## Quick start options
+## Quick start
 
 ### Run on local machine
 1) clone repo
