@@ -39,7 +39,7 @@ $ docker run -p 80:80 -t omics-bioanalytics
 ## Continuous Integration Continuous Delivery
 
 1) [Jenkins setup on Amazon EC2](https://github.com/singha53/udacity_capstone/blob/master/docs/jenkins.md)
-2) [Running pipelines](https://github.com/singha53/udacity_capstone/blob/master/docs/pipeline.md)
+2) [Running pipeline](https://github.com/singha53/udacity_capstone/blob/master/docs/pipeline.md)
 
 ## Copyright and license
 
