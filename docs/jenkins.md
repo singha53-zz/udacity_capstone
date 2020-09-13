@@ -24,6 +24,7 @@
 * b) Click on Launch Instance (select Launch Instance).
 * c) Choose an Amazon Machine Image (AMI): Select Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type - ami-0841edc20334f9287.
 * d) Choose an Instance Type: Select t3.medium (for larger apps)
+  - If you choose t2.micro, you can change it later by stopping the instance: Actions --> Instance settings --> Change instance type. Start the instance again: Actions --> Instance stae --> Start instance.
 * e) Click review and launch.
 * f) Make or select and existing key pair.
 * g) Launch instance.
@@ -60,6 +61,7 @@ $ sudo service jenkins start
 $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 * create first admin user or *Skip and continue as admin*
+* if you do not create a user; the username for the default admin is **admin**
 
 ### 7) Install required programs to run CI/CD pipelines
 1) Git: 
@@ -78,15 +80,21 @@ $ sudo groupadd docker
 $ sudo usermod -aG docker $(whoami)
 $ sudo service docker start
 ```
-4) Install linter (**e.g.** tidy for HTML, hadolint for Dockerfile) - this example is for [hadolint](https://github.com/hadolint/hadolint)
+4) Install linter (**e.g.** tidy for HTML, hadolint for Dockerfile) - this example is for [hadolint](https://github.com/hadolint/hadolint) and add permission to [docker daemon](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 ```bash
 $ docker pull hadolint/hadolint:latest-alpine
 $ docker run --rm -i hadolint/hadolint < Dockerfile
+$ sudo chmod 666 /var/run/docker.sock
+```
+5) AWS CLI
+```bash
+$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+$ unzip awscliv2.zip
+$ sudo ./aws/install
+$ aws --version
 ```
 
-
-3) AWS CLI
-4) KUBECTL
+6) KUBECTL
 
 
 ### 8) Manage Plugins

@@ -23,8 +23,8 @@ pipeline {
         } 
         stage( 'Push image to DockerHub' ) {
             steps {
-                withDockerRegistry([url: "", credentialsId: "dockerhub"]) {
-                    sh 'echo "Uploading image to dockerhub repository ..."'
+                withDockerRegistry([url: "", credentialsId: "docker"]) {
+                    sh 'echo "Uploading image to DockerHub ..."'
                     sh 'docker login'
                     sh 'docker push singha53/omics-bioanalytics:v0.1'          
                 }
