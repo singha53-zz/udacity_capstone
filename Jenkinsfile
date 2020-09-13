@@ -10,8 +10,8 @@ pipeline {
         }        
         stage('Linting step') {
             steps {
-                sh 'echo "Runnding tidy linter..."'
-                sh 'tidy -q -e *.html'
+                sh 'echo "Lint Dockerfile..."'
+                sh 'docker run --rm -i hadolint/hadolint < Dockerfile'
             }
         }   
         stage( 'Build omics-bioanalytics docker image' ) {

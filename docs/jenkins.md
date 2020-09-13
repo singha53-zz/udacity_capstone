@@ -12,6 +12,7 @@
     - [7) Install required programs to run CI/CD pipelines](#7-install-required-programs-to-run-cicd-pipelines)
     - [8) Manage Plugins](#8-manage-plugins)
     - [9) Add credentials](#9-add-credentials)
+    - [10) Pipeline configuration](#10-pipeline-configuration)
     - [10) Create CI/CD pipeline](#10-create-cicd-pipeline)
 
 ### 1) [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
@@ -61,10 +62,32 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 * create first admin user or *Skip and continue as admin*
 
 ### 7) Install required programs to run CI/CD pipelines
-1) AWS CLI
-2) KUBECTL
-3) docker
-4) 
+1) Git: 
+```bash
+$ sudo yum install git
+$ git --version
+```
+1) install docker
+```bash
+$ sudo yum install docker
+$ docker -v
+```
+3) [install docker daemon](https://stackoverflow.com/questions/21871479/docker-cant-connect-to-docker-daemon)
+```bash
+$ sudo groupadd docker
+$ sudo usermod -aG docker $(whoami)
+$ sudo service docker start
+```
+4) Install linter (**e.g.** tidy for HTML, hadolint for Dockerfile) - this example is for [hadolint](https://github.com/hadolint/hadolint)
+```bash
+$ docker pull hadolint/hadolint:latest-alpine
+$ docker run --rm -i hadolint/hadolint < Dockerfile
+```
+
+
+3) AWS CLI
+4) KUBECTL
+
 
 ### 8) Manage Plugins
 1) add Blue Ocean plugins (Manage Jenkins --> Manage Plugins --> Available):
@@ -73,8 +96,18 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 > select **Restart Jenkins when installation is complete and no jobs are running**
 
 ### 9) Add credentials
-1) AWS
-2) Docker
+> Managge Jenkins --> Manage Credentials --> click on down arrow beside **(global)** then click on **Add credentials**
+1) Docker:
+* Kind: Username with password
+* Scope: Global
+* Username: <DOCKERHUB_username>
+* Password: <DOCKERHUB_password>
+* ID: docker
+2) 
+
+### 10) Pipeline configuration
+  1) In Blue Ocean, click on the gear icon beside the repository name
+  2) Go to the **Build Configuration** tab --> Scan Repository Triggers --> check Periodically if not otherwise run --> Select interval --> Save
 
 ### 10) Create CI/CD pipeline
 1) Select **Open Blue Ocean**
