@@ -13,6 +13,7 @@
     - [8) Manage Plugins](#8-manage-plugins)
     - [9) Add credentials](#9-add-credentials)
     - [10) Pipeline configuration](#10-pipeline-configuration)
+    - [10) Restart Jenkins](#10-restart-jenkins)
     - [10) Create CI/CD pipeline](#10-create-cicd-pipeline)
 
 ### 1) [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
@@ -102,15 +103,16 @@ $ aws --version
 > aws-cli/2.0.48 Python/3.7.3 Linux/4.14.193-113.317.amzn1.x86_64 exe/x86_64.amzn.2018
 
 6) KUBECTL
+* install by Jenkins plugin
 ```bash
-
-
+$ sudo mv kubectl /usr/bin/
 ```
 
 ### 8) Manage Plugins
 1) add Blue Ocean plugins (Manage Jenkins --> Manage Plugins --> Available):
    * search for "blue ocean" and select: 1) Pipeline Implementation for Blue Ocean, 2) Dashboard for Blue Ocean 3) GitHub Pipeline for Blue Ocean 4) Blue Ocean Pipeline Editor, 5) Blue Ocean. Then click on **Install without restart**
    * search for "aws" and select: 1) CloudBees AWS Credentials and 2) Pipeline: AWS Steps. Then click on **Install without restart**
+   * search for "kubectl" and select Kubernetes CLI. Then click on **Install without restart**
 > select **Restart Jenkins when installation is complete and no jobs are running**
 
 ### 9) Add credentials
@@ -131,6 +133,11 @@ $ aws --version
 ### 10) Pipeline configuration
   1) In Blue Ocean, click on the gear icon beside the repository name
   2) Go to the **Build Configuration** tab --> Scan Repository Triggers --> check Periodically if not otherwise run --> Select interval --> Save
+
+### 10) Restart Jenkins
+```bash
+sudo service jenkins restart
+```
 
 ### 10) Create CI/CD pipeline
 1) Select **Open Blue Ocean**
