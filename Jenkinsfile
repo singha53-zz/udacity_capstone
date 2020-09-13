@@ -35,7 +35,7 @@ pipeline {
                 withAWS( region:'us-west-2', credentials:'aws-id' ) {
                     sh 'echo "Update AWS EKS cluster ..."' 
                     sh 'aws eks --region us-west-2 update-kubeconfig --name omics-bioanalytics'        
-                    sh 'kubectl set image deployment/omics-bioanalytics omics-bioanaltyics=singha53/omics-bioanalytics:v0.1 --record'
+                    sh 'kubectl set image deployment/omics-bioanalytics omics-bioanalytics=singha53/omics-bioanalytics:v0.1 --record'
                     sh 'kubectl rollout status deployment omics-bioanalytics'
                     sh 'kubectl apply -f templates/deployment.yml'
                     sh 'kubectl apply -f templates/loadbalancer.yml'
