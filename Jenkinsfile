@@ -11,7 +11,7 @@ pipeline {
         stage('Linting step') {
             steps {
                 sh 'echo "Lint Dockerfile..."'
-                sh 'sudo docker run --rm -i hadolint/hadolint < Dockerfile'
+                sh 'docker run --rm -i hadolint/hadolint < Dockerfile'
             }
         }   
         stage( 'Build omics-bioanalytics docker image' ) {
