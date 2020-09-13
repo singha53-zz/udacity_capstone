@@ -10,6 +10,7 @@
     - [Run on local machine](#run-on-local-machine)
     - [Run on Amazon EKS](#run-on-amazon-eks)
   - [Continuous Integration Continuous Delivery](#continuous-integration-continuous-delivery)
+  - [Udacity screenshots](#udacity-screenshots)
   - [Copyright and license](#copyright-and-license)
 
 ## Quick start
@@ -40,6 +41,8 @@ $ docker run -p 80:80 -t omics-bioanalytics
 
 1) [Jenkins setup on Amazon EC2](https://github.com/singha53/udacity_capstone/blob/master/docs/jenkins.md)
 2) [Running pipeline](https://github.com/singha53/udacity_capstone/blob/master/docs/pipeline.md)
+
+## [Udacity screenshots](https://github.com/singha53/udacity_capstone/blob/master/docs/udacity.md)
 
 ## Copyright and license
 

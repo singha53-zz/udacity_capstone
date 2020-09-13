@@ -14,7 +14,6 @@
     - [9) Add credentials](#9-add-credentials)
     - [10) Pipeline configuration](#10-pipeline-configuration)
     - [11) Restart Jenkins](#11-restart-jenkins)
-    - [12) Create CI/CD pipeline](#12-create-cicd-pipeline)
 
 ### 1) [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 
@@ -138,8 +137,3 @@ $ sudo mv kubectl /usr/bin/
 ```bash
 sudo service jenkins restart
 ```
-
-### 12) Create CI/CD pipeline
-1) Select **Open Blue Ocean**
-2) Click on **Create a new Pipeline**
-3) Where do you store your code? GitHub | Connect to GitHub (click on create access token here) and enter it in and click **Connect** | Select your github account | search for the repository (*e.g.* udacity_capstone) and then click **Create Pipeline**
