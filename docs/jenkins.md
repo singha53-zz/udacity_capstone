@@ -13,8 +13,8 @@
     - [8) Manage Plugins](#8-manage-plugins)
     - [9) Add credentials](#9-add-credentials)
     - [10) Pipeline configuration](#10-pipeline-configuration)
-    - [10) Restart Jenkins](#10-restart-jenkins)
-    - [10) Create CI/CD pipeline](#10-create-cicd-pipeline)
+    - [11) Restart Jenkins](#11-restart-jenkins)
+    - [12) Create CI/CD pipeline](#12-create-cicd-pipeline)
 
 ### 1) [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 
@@ -103,7 +103,7 @@ $ aws --version
 > aws-cli/2.0.48 Python/3.7.3 Linux/4.14.193-113.317.amzn1.x86_64 exe/x86_64.amzn.2018
 
 6) KUBECTL
-* install by Jenkins plugin
+* installed by Jenkins plugin (above)
 ```bash
 $ sudo mv kubectl /usr/bin/
 ```
@@ -134,12 +134,12 @@ $ sudo mv kubectl /usr/bin/
   1) In Blue Ocean, click on the gear icon beside the repository name
   2) Go to the **Build Configuration** tab --> Scan Repository Triggers --> check Periodically if not otherwise run --> Select interval --> Save
 
-### 10) Restart Jenkins
+### 11) Restart Jenkins
 ```bash
 sudo service jenkins restart
 ```
 
-### 10) Create CI/CD pipeline
+### 12) Create CI/CD pipeline
 1) Select **Open Blue Ocean**
 2) Click on **Create a new Pipeline**
 3) Where do you store your code? GitHub | Connect to GitHub (click on create access token here) and enter it in and click **Connect** | Select your github account | search for the repository (*e.g.* udacity_capstone) and then click **Create Pipeline**
