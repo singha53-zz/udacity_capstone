@@ -41,7 +41,7 @@ pipeline {
                     sh 'kubectl apply -f templates/loadbalancer.yml'
                     sh 'kubectl get svc --all-namespaces'
                     sh 'echo "Deployment successful."'
-                    sh 'kubectl describe deployment/web-app'
+                    sh 'kubectl describe deployment/omics-bioanalytics'
                 }
             }
         }               
