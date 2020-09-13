@@ -36,8 +36,6 @@ eksctl create cluster \
 --managed -p AWS_PROFILE
 ```
 
-![EKS cluster](https://github.com/singha53/udacity_capstone/blob/master/docs/deployment.png)
-
 ### 6) Check if cluster was created: 
 
 ```bash
@@ -61,6 +59,7 @@ $ kubectl apply -f templates/loadbalancer.yml
 ```bash
 $ kubectl get svc --all-namespaces
 ```
+![EKS cluster](https://github.com/singha53/udacity_capstone/blob/master/docs/deployment.png)
 
 ### 10) Navigate to the external IP listed in Step 9
 * for this example: a3a890c0387354d06b4c9b6d9f1b23f6-1824020278.us-west-2.elb.amazonaws.com

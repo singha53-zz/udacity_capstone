@@ -25,8 +25,8 @@ $ docker build -t omics-bioanalytics .
 
 ```bash
 $ docker image ls
-$ docker tag <_IMAGE_ID_> <REPO>/<_IMAGE_NAME_>:versionX.X
-$ docker push <_REPO_>/<_IMAGE_NAME_>:versionX.X
+$ docker tag <_IMAGE_ID_> <REPO>/<_IMAGE_NAME_>:vX.X
+$ docker push <_REPO_>/<_IMAGE_NAME_>:vX.X
 ```
 
 ### 6) [Delete images](https://stackoverflow.com/questions/44785585/how-to-delete-all-local-docker-images)

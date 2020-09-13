@@ -4,12 +4,13 @@
 
 ## Table of contents
 
-* [Quick start](#quick-start)
-* [CI/CD](#cicd)
-* [Bugs and feature requests](#bugs-and-feature-requests)
-* [Contributing](#contributing)
-* [References](#ref)
-* [Copyright and license](#copyright-and-license)
+- [Udacity Cloud DevOps Nanodegree Capstone project](#udacity-cloud-devops-nanodegree-capstone-project)
+  - [Table of contents](#table-of-contents)
+  - [Quick start](#quick-start)
+    - [Run on local machine](#run-on-local-machine)
+    - [Run on Amazon EKS](#run-on-amazon-eks)
+  - [Continuous Integration Continuous Delivery](#continuous-integration-continuous-delivery)
+  - [Copyright and license](#copyright-and-license)
 
 ## Quick start
 
@@ -33,5 +34,15 @@ $ docker run -p 80:80 -t omics-bioanalytics
 ### Run on Amazon EKS
 
 1) [Build, tag and push image to DockerHub](https://github.com/singha53/udacity_capstone/blob/master/docs/dockerhub.md)
-2) [Create EKS cluster and deploy application](https://github.com/singha53/udacity_capstone/blob/master/docs/eks_create.md)
-3) [Delete EKS cluster](https://github.com/singha53/udacity_capstone/blob/master/docs/eks_delete.md)
+2) [EKS cluster and app deployment](https://github.com/singha53/udacity_capstone/blob/master/docs/eks_create.md)
+
+## Continuous Integration Continuous Delivery
+
+1) [Jenkins setup on Amazon EC2](https://github.com/singha53/udacity_capstone/blob/master/docs/jenkins.md)
+2) [Running pipelines](https://github.com/singha53/udacity_capstone/blob/master/docs/pipeline.md)
+
+## Copyright and license
+
+Copyright 2020 AMRITPAL SINGH Inc.
+
+Code released under the [MIT license](https://github.com/singha53/udacity_capstone/blob/master/LICENSE).
