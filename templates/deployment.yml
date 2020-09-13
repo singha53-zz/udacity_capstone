@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: omics-bioanalytics
+  labels:
+    app: omics-bioanalytics
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: omics-bioanalytics
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: omics-bioanalytics
+    spec:
+      containers:
+        - image: "singha53/omics-bioanalytics:v0.1"
+          imagePullPolicy: Always
+          name: omics-bioanalytics
+          ports:
+          - containerPort: 3838
+          volumeMounts:
+          - mountPath: /usr/local/lib/R/site-library/omicsBioAnalytics/www/
+            name: omics-bioanalytics-storage
+      volumes:
+        - name: omics-bioanalytics-storage
