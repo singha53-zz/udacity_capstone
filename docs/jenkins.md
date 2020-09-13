@@ -69,23 +69,29 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 $ sudo yum install git
 $ git --version
 ```
-1) install docker
+> git version 2.18.4
+
+2) install docker
 ```bash
 $ sudo yum install docker
 $ docker -v
 ```
+> Docker version 19.03.6-ce, build 369ce74
+
 3) [install docker daemon](https://stackoverflow.com/questions/21871479/docker-cant-connect-to-docker-daemon)
 ```bash
 $ sudo groupadd docker
 $ sudo usermod -aG docker $(whoami)
 $ sudo service docker start
 ```
+
 4) Install linter (**e.g.** tidy for HTML, hadolint for Dockerfile) - this example is for [hadolint](https://github.com/hadolint/hadolint) and add permission to [docker daemon](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 ```bash
 $ docker pull hadolint/hadolint:latest-alpine
 $ docker run --rm -i hadolint/hadolint < Dockerfile
 $ sudo chmod 666 /var/run/docker.sock
 ```
+
 5) AWS CLI
 ```bash
 $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -93,25 +99,34 @@ $ unzip awscliv2.zip
 $ sudo ./aws/install
 $ aws --version
 ```
+> aws-cli/2.0.48 Python/3.7.3 Linux/4.14.193-113.317.amzn1.x86_64 exe/x86_64.amzn.2018
 
 6) KUBECTL
+```bash
 
+
+```
 
 ### 8) Manage Plugins
 1) add Blue Ocean plugins (Manage Jenkins --> Manage Plugins --> Available):
-   * search for blue ocean and select: 1) Pipeline Implementation for Blue Ocean, 2) Dashboard for Blue Ocean 3) GitHub Pipeline for Blue Ocean 4) Blue Ocean Pipeline Editor, 5) Blue Ocean. Then click on **Install without restart**
-
+   * search for "blue ocean" and select: 1) Pipeline Implementation for Blue Ocean, 2) Dashboard for Blue Ocean 3) GitHub Pipeline for Blue Ocean 4) Blue Ocean Pipeline Editor, 5) Blue Ocean. Then click on **Install without restart**
+   * search for "aws" and select: 1) CloudBees AWS Credentials and 2) Pipeline: AWS Steps. Then click on **Install without restart**
 > select **Restart Jenkins when installation is complete and no jobs are running**
 
 ### 9) Add credentials
-> Managge Jenkins --> Manage Credentials --> click on down arrow beside **(global)** then click on **Add credentials**
+> Manage Jenkins --> Manage Credentials --> click on down arrow beside **(global)** then click on **Add credentials**
 1) Docker:
 * Kind: Username with password
 * Scope: Global
 * Username: <DOCKERHUB_username>
 * Password: <DOCKERHUB_password>
-* ID: docker
-2) 
+* ID: docker (**MUST MATCH Jenkinsfile!)
+2) AWS:
+* Kind: AWS Credentials
+* Scope: Global
+* Username: <Access_Key_ID>
+* Password: <Secret_Access_Key>
+* ID: aws-id (**MUST MATCH Jenkinsfile!)
 
 ### 10) Pipeline configuration
   1) In Blue Ocean, click on the gear icon beside the repository name
